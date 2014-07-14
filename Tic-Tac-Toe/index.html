@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Tic-Tac-Toe</title>
+  <meta name="description" content="A fun game">
+  <meta name="author" content="Anurag Banerjee">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--[if lt IE 9]>
+  <script src="main.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <script src="main.js"></script>
+
+  <table width="100%">
+  <tr>
+  	<td></td>
+  	<td></td>
+  	<td></td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td></td>
+  	<td></td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td></td>
+  	<td></td>
+  </tr>
+  </table>
+  <div id="stats">
+<p>
+  <span id="xname" alt="click to edit">Player 1 (X)</span>
+  <input type="text" id="xnameEdit">:&nbsp;
+  <span id="xscore">0</span></p>
+<p>Ties: <span id="xoscore">0</span></p>
+<p>
+  <span id="oname" alt="click to edit">Player 2 (O)</span>
+  <input type="text" id="onameEdit">:&nbsp;
+  <span id="oscore">0</span>
+  <img id="settingsbutton" src="./settings_icon.png">
+</p>
+  </div>
+
+  <div id="settingsdialog">
+  </div>
+</body>
+</html>
