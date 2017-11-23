@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word Counter</title>
+	<style type="text/css">
+		#writer {
+			width: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			outline: none;
+			border: 0;
+			background: #EEEEEE;
+			padding: 20px;
+			font-size: 24px;
+			font-family: Helvetica;
+		}
+
+		#writer:empty:before {
+			content: attr(data-placeholder);
+			color: #C0C0C0;
+		}
+
+		#counter {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 20px;
+			font-size: 36px;
+			font-family: Helvetica;
+		}
+	</style>
+</head>
+<body>
+
+<div id="writer" contenteditable="true" data-placeholder="Enter your words here"></div>
+
+<span id="counter"></span>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#writer").focus();
+
+	$("#writer").on("change keyup paste", function (e) {
+		var text = $(this).text();
+		var words = text.split(" ");
+		
+		if (text == "") {
+			words = [];
+		}
+
+		if (words.length != 1) {
+			$("#counter").text(words.length + " words");
+		} else {
+			$("#counter").text(words.length + " word");
+		}
+	});
+</script>
+
+</body>
+</html>
