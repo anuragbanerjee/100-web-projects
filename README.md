@@ -5,7 +5,7 @@ For the practice and the lulz. Just to get better and stay sharp at doing web st
 1. Word Counter — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/001-word-counter) [[preview]](https://anuragbanerjee.github.io/100-web-projects/001-word-counter)
 2. Tic-Tac-Toe — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/002-tic-tac-toe) [[preview]](https://anuragbanerjee.github.io/100-web-projects/002-tic-tac-toe)
 3. Counter — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/003-counter) [[preview]](https://anuragbanerjee.github.io/100-web-projects/003-counter)
-4. TBD
+4. Timer — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/004-timer) [[preview]](https://anuragbanerjee.github.io/100-web-projects/004-timer)
 5. TBD
 6. TBD
 7. TBD
