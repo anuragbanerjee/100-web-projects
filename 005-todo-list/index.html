@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: Helvetica;
+		}
+
+		#app {
+			padding: 20px;
+			max-width: 300px;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		input[type="text"] {
+			padding: 10px;
+			border-radius: 4px;
+			border: 1px solid #EEE;
+			flex: 1;
+		}
+
+		input[type="checkbox"]:checked + label {
+			text-decoration: line-through;
+		}
+
+		li {
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		li:hover {
+			background: #EEE;
+		}
+	</style>
+</head>
+<body>
+	<section id="app">
+		<h1>simple todos</h1>
+
+		<input type="text" v-on:keyup.enter="addTodo($event)" autofocus="true">
+
+		<ul>
+			<li v-for="(todo, index) in todos" v-on:click="todo.done = !todo.done; saveTodos(todos)">
+				<input type="checkbox" v-model:checked="todo.done">
+				<label>{{todo.message}}</label>
+			</li>
+		</ul>
+
+		<a href="#" v-on:click="todos = []; saveTodos(todos)" v-if="todos.length > 0">clear all todos</a>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		function getTodosFromStorage() {
+			if (localStorage.todos) {
+				return JSON.parse(localStorage.todos);
+			} else {
+				return [];
+			}
+		}
+
+		const app = new Vue({
+			el: "#app",
+			data: {
+				todos: getTodosFromStorage()
+			},
+			methods: {
+				addTodo: function ($event) {
+					const newTodo = {
+						message: $event.target.value,
+						done: false
+					};
+
+					this.todos.push(newTodo);
+					$event.target.value = "";
+
+					this.saveTodos(this.todos);
+				},
+				saveTodos: function (newTodos) {;
+					const sortedTodos = newTodos.slice().sort( (x, y) => x.done > y.done);
+				  	console.log(`saved new todos: ${JSON.stringify(sortedTodos)}`);
+				  	localStorage.todos = JSON.stringify(sortedTodos);
+				  	this.todos = getTodosFromStorage();
+
+				}
+			},
+
+			watch: {
+			  todos: function (newTodos) {
+			  	if (this.todos !== newTodos) {
+				  	this.saveTodos(newTodos);
+			  	}
+			  }
+			}
+		});
+	</script>
+</body>
+</html>
