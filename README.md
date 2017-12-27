@@ -2,6 +2,10 @@
 
 For the practice and the lulz. Just to get better and stay sharp at doing web stuff, I'm going to put some of my small practice projects on here.
 
+Bookmarklet for quick access. Drag and drop this into your bookmarks bar.
+
+```javascript:(function() {  var pop = function(url) {    var options = {      width: 400,      height: 400,      top: window.screen.availHeight - 600 - 50,      left: window.screen.availWidth - 400 - 50    };    options = Object.keys(options).map(function(key) {      return key + "=" + options[key];    }).join(",");    var new_window = window.open(url, 'timer', options);    if (window.focus) {      new_window.focus()    }  };  pop('https://anuragbanerjee.github.io/100-web-projects/');})();```
+
 1. Word Counter — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/001-word-counter) [[preview]](https://anuragbanerjee.github.io/100-web-projects/001-word-counter)
 2. Tic-Tac-Toe — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/002-tic-tac-toe) [[preview]](https://anuragbanerjee.github.io/100-web-projects/002-tic-tac-toe)
 3. Counter — [[code]](https://github.com/anuragbanerjee/100-web-projects/tree/gh-pages/003-counter) [[preview]](https://anuragbanerjee.github.io/100-web-projects/003-counter)
